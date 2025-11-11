@@ -13,30 +13,18 @@ export const metadata: Metadata = {
   title: "Nadeer E P - Flutter Developer",
   description:
     "Building beautiful, fast, and scalable apps with Flutter. Portfolio showcasing projects, skills, and achievements.",
-  generator: "v0.app",
+ // generator: "v0.app",
   icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
+    
+    icon: "/nadeer-icon.png",
+    apple: "/nadeer-icon.png",
   },
   viewport: {
     width: "device-width",
     initialScale: 1,
     maximumScale: 1,
     userScalable: false,
-    themeColor: "#0f0f1e",
+   // themeColor: "#0f0f1e",
   },
 }
 

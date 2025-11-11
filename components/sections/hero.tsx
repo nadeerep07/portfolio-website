@@ -1,18 +1,21 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import Image from "next/image"
-import { ChevronDown } from "lucide-react"
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { ChevronDown, MapPin } from "lucide-react";
 
 export function Hero() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true)
-  }, [])
+    setIsVisible(true);
+  }, []);
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
+    >
       {/* Animated background shapes */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
@@ -24,10 +27,12 @@ export function Hero() {
           {/* Left: Profile Image */}
           <div
             className={`flex justify-center md:justify-end transition-all duration-1000 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
+              isVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-12"
             }`}
           >
-            <div className="relative w-80 h-96 rounded-2xl overflow-hidden border-2 border-cyan-500/30 glow-blue">
+            <div className="relative w-70 h-96 rounded-2xl overflow-hidden border-2 border-cyan-500/30 glow-blue">
               <Image
                 src="/images/design-mode/nadeer_casual.png"
                 alt="Nadeer E P"
@@ -41,24 +46,33 @@ export function Hero() {
           {/* Right: Hero Content */}
           <div
             className={`transition-all duration-1000 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
+              isVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 translate-x-12"
             }`}
           >
             <div className="space-y-6">
               <div>
-                <p className="text-cyan-400 text-lg font-semibold mb-2">Welcome to my portfolio</p>
-                <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
-                  Hi, I'm <span className="gradient-text">Nadeer E P</span>
+                <p className="text-cyan-400 text-lg font-semibold mb-2">
+                  Welcome to my portfolio
+                </p>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-snug sm:leading-tight">
+                  Hi, I'm <span className="gradient-text">Nadeer E&nbsp;P</span>
                 </h1>
+
                 <p className="text-2xl text-gray-400 mt-4">Flutter Developer</p>
               </div>
 
               <p className="text-gray-300 text-lg leading-relaxed max-w-lg">
-                Building beautiful, fast, and scalable apps with Flutter. Passionate about creating seamless user
-                experiences and leveraging modern technologies to solve real-world problems.
+                Building beautiful, fast, and scalable apps with Flutter.
+                Passionate about creating seamless user experiences and
+                leveraging modern technologies to solve real-world problems.
               </p>
 
-              <p className="text-gray-400 text-base">📍 Kerala, India</p>
+              <div className="flex items-center gap-2 text-gray-400 text-base">
+                <MapPin size={18} className="text-cyan-400" />
+                <span>Kerala, India</span>
+              </div>
 
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-4 pt-6">
@@ -80,10 +94,21 @@ export function Hero() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="text-cyan-400" size={32} />
+        <div
+          onClick={() => {
+            const nextSection = document.querySelector("#about"); // target next section ID
+            if (nextSection) {
+              nextSection.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center cursor-pointer group"
+        >
+          <ChevronDown
+            className="text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300 animate-bounce"
+            size={36}
+          />
         </div>
       </div>
     </section>
-  )
+  );
 }

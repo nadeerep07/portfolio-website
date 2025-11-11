@@ -31,8 +31,8 @@ export function Projects() {
       description:
         "A modern pitch presentation app with intuitive slide management and real-time collaboration features.",
       image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/create-a-modern-minimalistic-app-launch-_xg2_NRROSvK6YdjDngiaFA_VeMS029lR9uUXDDiXWPy2w-gnsySnPvSNTLh5D3n7FsgTAxZSvt0E.jpeg",
-      tech: ["Flutter", "Firebase", "Provider"],
+        "/quick-pitch.png",
+      tech: ["Flutter", "Firebase", "Bloc","Cloudinary","Google Maps","Razorpay","Gemini API"],
       link: "https://play.google.com/store/apps/details?id=com.quickpitch",
       type: "Apps",
     },
@@ -40,8 +40,8 @@ export function Projects() {
       id: 2,
       title: "InvoZoyo",
       description: "Professional invoicing application with PDF generation, payment tracking, and client management.",
-      image: "/invoice-app.jpg",
-      tech: ["Flutter", "Hive", "PDF Export"],
+      image: "/invo-zoyo.png",
+      tech: ["Flutter", "Hive", "PDF Export","fl_chart"],
       link: "https://play.google.com/store/apps/details?id=com.zoyo.bathware",
       type: "Apps",
     },
@@ -51,7 +51,7 @@ export function Projects() {
       description:
         "A Flutter package that formats and displays the UAE Dirham (AED) currency symbol in multiple styles for consistent representation across apps.",
       image:
-        "https://raw.githubusercontent.com/nadeerep07/dirham-symbol/master/screenshots/light_mode.png",
+        "/dirham-package.png",
       tech: ["Dart", "Flutter Package"],
       link: "https://pub.dev/packages/dirham_symbol",
       type: "Packages",
@@ -102,7 +102,7 @@ export function Projects() {
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               {/* Project Image */}
-              <div className="relative h-48 overflow-hidden bg-slate-800">
+              <div className="relative h-88 overflow-hidden bg-slate-800">
                 <Image
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}

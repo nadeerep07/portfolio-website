@@ -41,7 +41,7 @@ export function Projects() {
       title: "InvoZoyo",
       description: "Professional invoicing application with PDF generation, payment tracking, and client management.",
       image: "/invoice-app.jpg",
-      tech: ["Flutter", "Sqflite", "PDF Export"],
+      tech: ["Flutter", "Hive", "PDF Export"],
       link: "https://play.google.com/store/apps/details?id=com.zoyo.bathware",
       type: "Apps",
     },

@@ -44,11 +44,11 @@ export const metadata: Metadata = {
     title: "Nadeer E P - Flutter Developer",
     description:
       "Building beautiful, fast, and scalable apps with Flutter. Portfolio showcasing projects, skills, and achievements.",
-    url: "https://nadeerep-portfolio.vercel.app", // 🔁 replace with your actual domain (e.g. https://nadeer.dev)
+    url: "https://nadeerep-portfolio.vercel.app", 
     siteName: "Nadeer E P",
     images: [
       {
-        url: "https://nadeerep-portfolio.vercel.app/nadeer-icon.png", // 🔁 absolute URL for OpenGraph
+        url: "https://nadeerep-portfolio.vercel.app/nadeer-icon.png", 
         width: 1200,
         height: 630,
         alt: "Nadeer E P - Flutter Developer",

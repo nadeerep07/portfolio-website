@@ -23,43 +23,57 @@ export function Skills() {
   }, [])
 
   const skillCategories = [
-    {
-      title: "Languages",
-      icon: Code2,
-      skills: ["Dart", "C", "Swift"],
-      color: "cyan",
-    },
-    {
-      title: "Frameworks",
-      icon: Zap,
-      skills: ["Flutter", "Android", "SwiftUI"],
-      color: "purple",
-    },
-    {
-      title: "State Management",
-      icon: Database,
-      skills: ["BLoC", "Provider", "GetX", "Riverpod"],
-      color: "cyan",
-    },
-    {
-      title: "Databases & Storage",
-      icon: Database,
-      skills: ["Firebase", "Sqflite", "Hive"],
-      color: "purple",
-    },
-    {
-      title: "Tools & Version Control",
-      icon: GitBranch,
-      skills: ["Git", "GitHub", "Android Studio", "VS Code", "Xcode"],
-      color: "cyan",
-    },
-    {
-      title: "Backend & APIs",
-      icon: Zap,
-      skills: ["REST APIs", "Firebase", "Cloudinary", "Razorpay","Google Maps API"],
-      color: "purple",
-    },
-  ]
+  {
+    title: "Languages",
+    icon: Code2,
+    skills: ["Dart", "C", "JavaScript"],
+    color: "cyan",
+  },
+  {
+    title: "Frameworks",
+    icon: Zap,
+    skills: ["Flutter", "Express.js", "SwiftUI"],
+    color: "purple",
+  },
+  {
+    title: "State Management",
+    icon: Database,
+    skills: ["BLoC", "Provider", "GetX", "Riverpod"],
+    color: "cyan",
+  },
+  {
+    title: "Databases & Storage",
+    icon: Database,
+    skills: ["Firebase", "MongoDB", "Hive", "Sqflite"],
+    color: "purple",
+  },
+  {
+    title: "Tools & Version Control",
+    icon: GitBranch,
+    skills: ["Git", "GitHub", "Android Studio", "VS Code", "Xcode", "Postman"],
+    color: "cyan",
+  },
+  {
+    title: "Backend & APIs",
+    icon: Zap,
+    skills: [
+      "REST APIs",
+      "Node.js",
+      "Express.js",
+      "Cloudinary",
+      "Razorpay",
+      "Google Maps API"
+    ],
+    color: "purple",
+  },
+  {
+    title: "Learning & Exploring",
+    icon: Zap,
+    skills: ["Swift", "Kotlin", "Full-stack workflows"],
+    color: "cyan",
+  },
+]
+
 
   return (
     <section id="skills" className="py-20 relative">

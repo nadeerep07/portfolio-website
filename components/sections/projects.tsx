@@ -1,28 +1,28 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-import Image from "next/image"
-import { ExternalLink } from "lucide-react"
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import { ExternalLink } from "lucide-react";
 
 export function Projects() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [activeFilter, setActiveFilter] = useState("All")
-  const ref = useRef(null)
+  const [isVisible, setIsVisible] = useState(false);
+  const [activeFilter, setActiveFilter] = useState("All");
+  const ref = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.unobserve(entry.target)
+          setIsVisible(true);
+          observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.3 },
-    )
+      { threshold: 0.3 }
+    );
 
-    if (ref.current) observer.observe(ref.current)
-    return () => observer.disconnect()
-  }, [])
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
 
   const projects = [
     {
@@ -30,18 +30,26 @@ export function Projects() {
       title: "QuickPitch",
       description:
         "A modern pitch presentation app with intuitive slide management and real-time collaboration features.",
-      image:
-        "/quick-pitch.png",
-      tech: ["Flutter", "Firebase", "Bloc","Cloudinary","Google Maps","Razorpay","Gemini API"],
+      image: "/quick-pitch.png",
+      tech: [
+        "Flutter",
+        "Firebase",
+        "Bloc",
+        "Cloudinary",
+        "Google Maps",
+        "Razorpay",
+        "Gemini API",
+      ],
       link: "https://play.google.com/store/apps/details?id=com.quickpitch",
       type: "Apps",
     },
     {
       id: 2,
       title: "InvoZoyo",
-      description: "Professional invoicing application with PDF generation, payment tracking, and client management.",
+      description:
+        "Professional invoicing application with PDF generation, payment tracking, and client management.",
       image: "/invo-zoyo.png",
-      tech: ["Flutter", "Hive", "PDF Export","fl_chart"],
+      tech: ["Flutter", "Hive", "PDF Export", "fl_chart"],
       link: "https://play.google.com/store/apps/details?id=com.zoyo.bathware",
       type: "Apps",
     },
@@ -50,16 +58,36 @@ export function Projects() {
       title: "Dirham Symbol Package",
       description:
         "A Flutter package that formats and displays the UAE Dirham (AED) currency symbol in multiple styles for consistent representation across apps.",
-      image:
-        "/dirham-package.png",
+      image: "/dirham-package.png",
       tech: ["Dart", "Flutter Package"],
       link: "https://pub.dev/packages/dirham_symbol",
       type: "Packages",
     },
-  ]
 
-  const filters = ["All", "Apps", "Packages"]
-  const filteredProjects = activeFilter === "All" ? projects : projects.filter((p) => p.type === activeFilter)
+    {
+      id: 4,
+      title: "InterviewMind Pro",
+      description:
+        "An AI-powered interview preparation platform that generates personalized interview questions, analyzes user responses, and provides real-time insights to help professionals improve their skills.",
+      image: "/interview-mind-pro.png",
+      tech: [
+        "Next.js",
+        "Express",
+        "MongoDB",
+        "AI Analysis",
+        "JWT Auth",
+        "ShadCN UI",
+      ],
+      link: "https://interview-mind-pro.vercel.app/",
+      type: "Web",
+    },
+  ];
+
+  const filters = ["All", "Apps", "Packages", "Web"];
+  const filteredProjects =
+    activeFilter === "All"
+      ? projects
+      : projects.filter((p) => p.type === activeFilter);
 
   return (
     <section id="projects" className="py-20 relative">
@@ -113,13 +141,20 @@ export function Projects() {
 
               {/* Project Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                <p className="text-gray-400 text-sm mb-4 line-clamp-2">{project.description}</p>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-gray-400 text-sm mb-4 line-clamp-2">
+                  {project.description}
+                </p>
 
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tech.map((tech, idx) => (
-                    <span key={idx} className="px-3 py-1 bg-cyan-500/20 text-cyan-300 text-xs font-medium rounded-full">
+                    <span
+                      key={idx}
+                      className="px-3 py-1 bg-cyan-500/20 text-cyan-300 text-xs font-medium rounded-full"
+                    >
                       {tech}
                     </span>
                   ))}
@@ -132,7 +167,12 @@ export function Projects() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-semibold transition-colors duration-300"
                 >
-                  View on Store <ExternalLink size={16} />
+                  {project.type === "Apps"
+                    ? "View on Store"
+                    : project.type === "Packages"
+                    ? "View Package"
+                    : "Visit Website"}{" "}
+                  <ExternalLink size={16} />
                 </a>
               </div>
             </div>
@@ -140,5 +180,5 @@ export function Projects() {
         </div>
       </div>
     </section>
-  )
+  );
 }
